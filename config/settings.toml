@@ -1,0 +1,14 @@
+[input]
+# Valores em segundos/MB; uma pausa na cópia pode exigir nova validação.
+stable_samples = 3
+stable_interval_seconds = 1.0
+max_file_mb = 30
+max_pixels = 40000000
+
+[recognition]
+pipeline_version = "v1.6"
+device = "cpu"
+# Sem reorientação/retificação do modelo: as coordenadas referem-se a normalized.png.
+use_doc_orientation_classify = false
+use_doc_unwarping = false
+

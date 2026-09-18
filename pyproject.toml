@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ocr-reader"
+version = "0.1.0"
+description = "Protótipo local para transcrição de apontamentos manuscritos"
+requires-python = ">=3.11,<3.14"
+dependencies = ["Pillow>=11.2.1,<13"]
+
+[project.optional-dependencies]
+ocr = ["paddleocr[doc-parser]==3.7.0"]
+dev = ["pytest>=8.3,<10"]
+
+[project.scripts]
+ocr-reader = "ocr_reader.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+
